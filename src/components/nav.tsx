@@ -38,6 +38,7 @@ export function Nav() {
         border-radius: 40px;
         padding: ;
         margin: 10px 20px;
+        margin-bottom: 40px;
         padding: 10px;
         
         display: flex;

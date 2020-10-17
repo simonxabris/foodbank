@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^0.2.23",
+    "@emotion/core": "^10.0.35",
     "aws-amplify": "^3.3.3",
+    "emotion": "^10.0.27",
+    "emotion-server": "^10.0.27",
     "next": "9.5.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
