@@ -2,69 +2,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTask = /* GraphQL */ `
-  subscription OnCreateTask {
-    onCreateTask {
+export const onCreateRecipe = /* GraphQL */ `
+  subscription OnCreateRecipe($owner: String!) {
+    onCreateRecipe(owner: $owner) {
       id
-      title
-      description
-      status
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateTask = /* GraphQL */ `
-  subscription OnUpdateTask {
-    onUpdateTask {
-      id
-      title
-      description
-      status
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteTask = /* GraphQL */ `
-  subscription OnDeleteTask {
-    onDeleteTask {
-      id
-      title
-      description
-      status
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePrivateNote = /* GraphQL */ `
-  subscription OnCreatePrivateNote($owner: String!) {
-    onCreatePrivateNote(owner: $owner) {
-      id
-      content
+      name
+      photos
+      ingredients {
+        name
+        amount
+        unit
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const onUpdatePrivateNote = /* GraphQL */ `
-  subscription OnUpdatePrivateNote($owner: String!) {
-    onUpdatePrivateNote(owner: $owner) {
+export const onUpdateRecipe = /* GraphQL */ `
+  subscription OnUpdateRecipe($owner: String!) {
+    onUpdateRecipe(owner: $owner) {
       id
-      content
+      name
+      photos
+      ingredients {
+        name
+        amount
+        unit
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const onDeletePrivateNote = /* GraphQL */ `
-  subscription OnDeletePrivateNote($owner: String!) {
-    onDeletePrivateNote(owner: $owner) {
+export const onDeleteRecipe = /* GraphQL */ `
+  subscription OnDeleteRecipe($owner: String!) {
+    onDeleteRecipe(owner: $owner) {
       id
-      content
+      name
+      photos
+      ingredients {
+        name
+        amount
+        unit
+      }
       createdAt
       updatedAt
       owner

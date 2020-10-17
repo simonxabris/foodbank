@@ -2,20 +2,25 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateTaskInput = {
+export type CreateRecipeInput = {
   id?: string | null,
-  title: string,
-  description?: string | null,
-  status?: string | null,
+  name: string,
+  photos: Array< string | null >,
+  ingredients: Array< IngredientInput | null >,
 };
 
-export type ModelTaskConditionInput = {
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  status?: ModelStringInput | null,
-  and?: Array< ModelTaskConditionInput | null > | null,
-  or?: Array< ModelTaskConditionInput | null > | null,
-  not?: ModelTaskConditionInput | null,
+export type IngredientInput = {
+  name: string,
+  amount: string,
+  unit: string,
+};
+
+export type ModelRecipeConditionInput = {
+  name?: ModelStringInput | null,
+  photos?: ModelStringInput | null,
+  and?: Array< ModelRecipeConditionInput | null > | null,
+  or?: Array< ModelRecipeConditionInput | null > | null,
+  not?: ModelRecipeConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -58,46 +63,24 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type UpdateTaskInput = {
+export type UpdateRecipeInput = {
   id: string,
-  title?: string | null,
-  description?: string | null,
-  status?: string | null,
+  name?: string | null,
+  photos?: Array< string | null > | null,
+  ingredients?: Array< IngredientInput | null > | null,
 };
 
-export type DeleteTaskInput = {
+export type DeleteRecipeInput = {
   id?: string | null,
 };
 
-export type CreatePrivateNoteInput = {
-  id?: string | null,
-  content: string,
-};
-
-export type ModelPrivateNoteConditionInput = {
-  content?: ModelStringInput | null,
-  and?: Array< ModelPrivateNoteConditionInput | null > | null,
-  or?: Array< ModelPrivateNoteConditionInput | null > | null,
-  not?: ModelPrivateNoteConditionInput | null,
-};
-
-export type UpdatePrivateNoteInput = {
-  id: string,
-  content?: string | null,
-};
-
-export type DeletePrivateNoteInput = {
-  id?: string | null,
-};
-
-export type ModelTaskFilterInput = {
+export type ModelRecipeFilterInput = {
   id?: ModelIDInput | null,
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  status?: ModelStringInput | null,
-  and?: Array< ModelTaskFilterInput | null > | null,
-  or?: Array< ModelTaskFilterInput | null > | null,
-  not?: ModelTaskFilterInput | null,
+  name?: ModelStringInput | null,
+  photos?: ModelStringInput | null,
+  and?: Array< ModelRecipeFilterInput | null > | null,
+  or?: Array< ModelRecipeFilterInput | null > | null,
+  not?: ModelRecipeFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -116,179 +99,117 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelPrivateNoteFilterInput = {
-  id?: ModelIDInput | null,
-  content?: ModelStringInput | null,
-  and?: Array< ModelPrivateNoteFilterInput | null > | null,
-  or?: Array< ModelPrivateNoteFilterInput | null > | null,
-  not?: ModelPrivateNoteFilterInput | null,
+export type CreateRecipeMutationVariables = {
+  input: CreateRecipeInput,
+  condition?: ModelRecipeConditionInput | null,
 };
 
-export type CreateTaskMutationVariables = {
-  input: CreateTaskInput,
-  condition?: ModelTaskConditionInput | null,
-};
-
-export type CreateTaskMutation = {
-  createTask:  {
-    __typename: "Task",
+export type CreateRecipeMutation = {
+  createRecipe:  {
+    __typename: "Recipe",
     id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateTaskMutationVariables = {
-  input: UpdateTaskInput,
-  condition?: ModelTaskConditionInput | null,
-};
-
-export type UpdateTaskMutation = {
-  updateTask:  {
-    __typename: "Task",
-    id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteTaskMutationVariables = {
-  input: DeleteTaskInput,
-  condition?: ModelTaskConditionInput | null,
-};
-
-export type DeleteTaskMutation = {
-  deleteTask:  {
-    __typename: "Task",
-    id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type CreatePrivateNoteMutationVariables = {
-  input: CreatePrivateNoteInput,
-  condition?: ModelPrivateNoteConditionInput | null,
-};
-
-export type CreatePrivateNoteMutation = {
-  createPrivateNote:  {
-    __typename: "PrivateNote",
-    id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
   } | null,
 };
 
-export type UpdatePrivateNoteMutationVariables = {
-  input: UpdatePrivateNoteInput,
-  condition?: ModelPrivateNoteConditionInput | null,
+export type UpdateRecipeMutationVariables = {
+  input: UpdateRecipeInput,
+  condition?: ModelRecipeConditionInput | null,
 };
 
-export type UpdatePrivateNoteMutation = {
-  updatePrivateNote:  {
-    __typename: "PrivateNote",
+export type UpdateRecipeMutation = {
+  updateRecipe:  {
+    __typename: "Recipe",
     id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
   } | null,
 };
 
-export type DeletePrivateNoteMutationVariables = {
-  input: DeletePrivateNoteInput,
-  condition?: ModelPrivateNoteConditionInput | null,
+export type DeleteRecipeMutationVariables = {
+  input: DeleteRecipeInput,
+  condition?: ModelRecipeConditionInput | null,
 };
 
-export type DeletePrivateNoteMutation = {
-  deletePrivateNote:  {
-    __typename: "PrivateNote",
+export type DeleteRecipeMutation = {
+  deleteRecipe:  {
+    __typename: "Recipe",
     id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
   } | null,
 };
 
-export type GetTaskQueryVariables = {
+export type GetRecipeQueryVariables = {
   id: string,
 };
 
-export type GetTaskQuery = {
-  getTask:  {
-    __typename: "Task",
+export type GetRecipeQuery = {
+  getRecipe:  {
+    __typename: "Recipe",
     id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
+    owner: string | null,
   } | null,
 };
 
-export type ListTasksQueryVariables = {
-  filter?: ModelTaskFilterInput | null,
+export type ListRecipesQueryVariables = {
+  filter?: ModelRecipeFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListTasksQuery = {
-  listTasks:  {
-    __typename: "ModelTaskConnection",
+export type ListRecipesQuery = {
+  listRecipes:  {
+    __typename: "ModelRecipeConnection",
     items:  Array< {
-      __typename: "Task",
+      __typename: "Recipe",
       id: string,
-      title: string,
-      description: string | null,
-      status: string | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken: string | null,
-  } | null,
-};
-
-export type GetPrivateNoteQueryVariables = {
-  id: string,
-};
-
-export type GetPrivateNoteQuery = {
-  getPrivateNote:  {
-    __typename: "PrivateNote",
-    id: string,
-    content: string,
-    createdAt: string,
-    updatedAt: string,
-    owner: string | null,
-  } | null,
-};
-
-export type ListPrivateNotesQueryVariables = {
-  filter?: ModelPrivateNoteFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListPrivateNotesQuery = {
-  listPrivateNotes:  {
-    __typename: "ModelPrivateNoteConnection",
-    items:  Array< {
-      __typename: "PrivateNote",
-      id: string,
-      content: string,
+      name: string,
+      photos: Array< string | null >,
+      ingredients:  Array< {
+        __typename: "Ingredient",
+        name: string,
+        amount: string,
+        unit: string,
+      } | null >,
       createdAt: string,
       updatedAt: string,
       owner: string | null,
@@ -297,81 +218,66 @@ export type ListPrivateNotesQuery = {
   } | null,
 };
 
-export type OnCreateTaskSubscription = {
-  onCreateTask:  {
-    __typename: "Task",
-    id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateTaskSubscription = {
-  onUpdateTask:  {
-    __typename: "Task",
-    id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteTaskSubscription = {
-  onDeleteTask:  {
-    __typename: "Task",
-    id: string,
-    title: string,
-    description: string | null,
-    status: string | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnCreatePrivateNoteSubscriptionVariables = {
+export type OnCreateRecipeSubscriptionVariables = {
   owner: string,
 };
 
-export type OnCreatePrivateNoteSubscription = {
-  onCreatePrivateNote:  {
-    __typename: "PrivateNote",
+export type OnCreateRecipeSubscription = {
+  onCreateRecipe:  {
+    __typename: "Recipe",
     id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
   } | null,
 };
 
-export type OnUpdatePrivateNoteSubscriptionVariables = {
+export type OnUpdateRecipeSubscriptionVariables = {
   owner: string,
 };
 
-export type OnUpdatePrivateNoteSubscription = {
-  onUpdatePrivateNote:  {
-    __typename: "PrivateNote",
+export type OnUpdateRecipeSubscription = {
+  onUpdateRecipe:  {
+    __typename: "Recipe",
     id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
   } | null,
 };
 
-export type OnDeletePrivateNoteSubscriptionVariables = {
+export type OnDeleteRecipeSubscriptionVariables = {
   owner: string,
 };
 
-export type OnDeletePrivateNoteSubscription = {
-  onDeletePrivateNote:  {
-    __typename: "PrivateNote",
+export type OnDeleteRecipeSubscription = {
+  onDeleteRecipe:  {
+    __typename: "Recipe",
     id: string,
-    content: string,
+    name: string,
+    photos: Array< string | null >,
+    ingredients:  Array< {
+      __typename: "Ingredient",
+      name: string,
+      amount: string,
+      unit: string,
+    } | null >,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
